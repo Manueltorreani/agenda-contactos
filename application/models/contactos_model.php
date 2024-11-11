@@ -54,4 +54,11 @@ class Contactos_model extends CI_Model
 
 		return $this->db->affected_rows(); // Devuelve el número de filas afectadas
 	}
+
+    // Obtiene un contacto por su ID
+public function obtener_contacto($id) {
+    $this->db->where("contacto_id", intval($id));
+    return $this->db->get("contactos")->row_array();
+}
+
 }
